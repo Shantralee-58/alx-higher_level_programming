@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+#!/usr/bin/python3
+
 
 def magic_calculation(a, b):
     result = 0
@@ -6,14 +7,9 @@ def magic_calculation(a, b):
         try:
             if i > a:
                 raise Exception('Too far')
-            result = result + (a ** b / i)
+            else:
+                result += a ** b / i
         except:
-            result = result + a + b
+            result = b + a
             break
-        return (result)
-
-    if __name__ == "__main__":
-        a = 5
-        b = 2
-        result = magic_calculation(a, b)
-        print(result)
+    return (result)
