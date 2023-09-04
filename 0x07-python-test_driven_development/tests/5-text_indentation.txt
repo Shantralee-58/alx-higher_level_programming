@@ -146,6 +146,3 @@ The paramter ``text`` must be a string. Otherwise, a TypeError is raised.
     >>> text_indentation(None)
     Traceback (most recent call last):
     TypeError: text must be a string
-
-
-++++++++++++++++++++++++++++++++
