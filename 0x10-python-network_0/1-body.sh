@@ -3,5 +3,10 @@
 
 url=$1
 
+echo "Script started with URL: $url"
+
 # Use curl to send a GET request and display only the body for a 200 status code
-curl -sL "$url"
+response=$(curl -sL "$url")
+
+echo "Response:"
+echo "$response"
