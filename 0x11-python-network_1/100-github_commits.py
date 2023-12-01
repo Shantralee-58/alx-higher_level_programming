@@ -15,16 +15,20 @@ if __name__ == "__main__":
     repo_name = sys.argv[1]
     owner_name = sys.argv[2]
 
-    url = "https://api.github.com/repos/{}/{}/commits".format(owner_name, repo_name)
+    url = f"https://api.github.com/repos/{owner_name}/{repo_name}/commits"
     params = {'per_page': 10}
 
     response = requests.get(url, params=params)
 
     try:
         commits = response.json()
-        for commit in commits:
-            sha = commit.get('sha')
-            author_name = commit.get('commit', {}).get('author', {}).get('name', 'Unknown Author')
-            print("{}: {}".format(sha, author_name))
+        
+        if response.status_code == 200:
+            for commit in commits:
+                sha = commit.get('sha')
+                author_name = commit.get('commit', {}).get('author', {}).get('name', 'Unknown Author')
+                print("{}: {}".format(sha, author_name))
+        else:
+            print(f"Error: {response.status_code}")
     except ValueError:
         print("Could not retrieve commits. Check your input and try again.")
