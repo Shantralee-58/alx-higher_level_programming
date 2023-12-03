@@ -2,7 +2,6 @@
 """
 Takes a URL and an email, sends a POST request, and displays the body of the response
 """
-
 import urllib.request
 import urllib.parse
 import sys
