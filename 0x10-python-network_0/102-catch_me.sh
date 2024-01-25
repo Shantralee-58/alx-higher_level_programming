@@ -1,3 +1,3 @@
 #!/bin/bash
-# This script makes a request to a specific URL that causes the server to respond with a message
-curl -sLX PUT "$1" -d "user_id=98" -H "Origin: HolbertonSchool"
+# This script makes a request to 0.0.0.0:5000/catch_me that causes the server to respond with a message containing You got me!
+curl -sLX PUT -H "Origin: HolbertonSchool" 0.0.0.0:5000/catch_me --data "user_id=98"
