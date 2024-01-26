@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """script for finding peak in list of ints, interview prep
+   Time Complexity: O(n)
 """
 
 """
