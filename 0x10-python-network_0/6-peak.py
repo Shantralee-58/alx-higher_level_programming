@@ -1,13 +1,31 @@
 #!/usr/bin/python3
-"""Script for finding peak in list of ints using sorting.
-   Time Complexity: O(n log n)
-"""
+""" Find the peak on unsorted list """
+
 
 def find_peak(list_of_integers):
-    """Sort the list in descending order and return the first element as the peak
-    """
-    if not list_of_integers:
+    """ Function to find the peak on unsorted list of numbers """
+    if list_of_integers is None or not type(list_of_integers) is list:
+        return None
+    if len(list_of_integers) == 0:
         return None
 
-    list_of_integers.sort(reverse=True)
-    return list_of_integers[0]
+    i = 0
+    peak = list_of_integers[0]
+    list_len = len(list_of_integers)
+
+    while (i < list_len - 1):
+        if i == 0 and list_of_integers[i] >= list_of_integers[i + 1]:
+            peak = max(peak, list_of_integers[i])
+            i += 1
+        elif (list_of_integers[i] >= list_of_integers[i - 1] and
+              list_of_integers[i] >= list_of_integers[i + 1]):
+            peak = max(peak, list_of_integers[i])
+            i += 1
+
+        i += 1
+    try:
+        if list_of_integers[i] >= list_of_integers[i - 1]:
+            peak = max(peak, list_of_integers[i])
+    except Exception:
+        pass
+    return peak
