@@ -1,2 +1,2 @@
-Time Complexity: O(n log n)
+Time Complexity: O(log(n))
 Best Case: O(1)
