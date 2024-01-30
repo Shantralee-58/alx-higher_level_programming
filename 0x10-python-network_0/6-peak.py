@@ -4,28 +4,23 @@
 
 def find_peak(list_of_integers):
     """ Function to find the peak on unsorted list of numbers """
-    if list_of_integers is None or not type(list_of_integers) is list:
-        return None
-    if len(list_of_integers) == 0:
+    if list_of_integers is None or not isinstance(list_of_integers, list):
         return None
 
-    i = 0
-    peak = list_of_integers[0]
     list_len = len(list_of_integers)
 
-    while (i < list_len - 1):
-        if i == 0 and list_of_integers[i] >= list_of_integers[i + 1]:
-            peak = max(peak, list_of_integers[i])
-            i += 1
-        elif (list_of_integers[i] >= list_of_integers[i - 1] and
-              list_of_integers[i] >= list_of_integers[i + 1]):
-            peak = max(peak, list_of_integers[i])
-            i += 1
+    if list_len == 0:
+        return None
 
-        i += 1
-    try:
-        if list_of_integers[i] >= list_of_integers[i - 1]:
-            peak = max(peak, list_of_integers[i])
-    except Exception:
-        pass
-    return peak
+    # Binary search-like approach to find peak
+    low, high = 0, list_len - 1
+
+    while low < high:
+        mid = (low + high) // 2
+
+        if list_of_integers[mid] > list_of_integers[mid + 1]:
+            high = mid
+        else:
+            low = mid + 1
+
+    return list_of_integers[low]
