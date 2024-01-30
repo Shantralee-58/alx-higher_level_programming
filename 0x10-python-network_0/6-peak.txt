@@ -1,2 +1,2 @@
-
-O(log(n))
+The function uses a binary search-like approach to find a peak in a list of unsorted integers. 
+The time complexity is O(log(n)).
