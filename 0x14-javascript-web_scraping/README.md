@@ -2,8 +2,7 @@
 
 This project involved practicing file I/O on Node.js and using the NPM request
 framework to interact with the [Star Wars](https://swapi.co/),
-[JSONplaceholder](https://jsonplaceholder.typicode.com), and
-[Twitter](https://developer.twitter.com/en/docs/api-reference-index) API's.
+[JSONplaceholder](https://jsonplaceholder.typicode.com)
 
 ## Tasks :page_with_curl:
 
@@ -54,9 +53,3 @@ framework to interact with the [Star Wars](https://swapi.co/),
   that uses the Star Wars API to print all characters featured in a given movie in
   the same order as they are listed in the `characters` list of the `/films/` response.
   * Usage: `./101-starwars_characters.js <movie ID>`.
-
-* **9. Twitter Auth**
-  * [102-search_twitter.js](./102-search_twitter.js): JavaScript script that sends
-  a search request to the Twitter API with a given search string.
-  * Usage: `./102-search_twitter.js <consumer  key> <consumer secret> <search string>.
-  * Outputs 5 results in the format `[<Tweet ID>] <Tweet text> by <Tweet owner name>`
